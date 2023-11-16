@@ -1,5 +1,6 @@
 sceneSetups:
 - path: Assets/Assets/POLYGON city pack/scene/DemoScene.unity
+- path: Assets/Assets/Cartoon Vehicles/Demo/scene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
