@@ -352,6 +352,7 @@
 "Assets/Challenge 1/Scripts/PlayerControllerX.cs"
 "Assets/Scripts/Collect.cs"
 "Assets/Scripts/FollowPlayer.cs"
+"Assets/Scripts/LevelBoundary.cs"
 "Assets/Scripts/PlayerController.cs"
 -langversion:9.0
 
