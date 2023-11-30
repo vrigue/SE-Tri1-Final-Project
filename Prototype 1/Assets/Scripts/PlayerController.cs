@@ -23,7 +23,6 @@ public class PlayerController : MonoBehaviour
 
 
     private float speed = 20;
-    // //private float turnSpeed = 35;
     private float horizontalInput;
     private float forwardInput;
     public float moveSpeed = 3.0f;
@@ -35,7 +34,6 @@ public class PlayerController : MonoBehaviour
         
     // }
 
-    // Update is called once per frame
     void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
@@ -51,14 +49,14 @@ public class PlayerController : MonoBehaviour
         //     transform.position = new Vector3(5,0,6);
         // }
         if (Input.GetKey(KeyCode.LeftArrow)) {
-            // if (this.gameObject.transform.position.x > LevelBoundary.leftSide) {
+            if (this.gameObject.transform.position.x > LevelBoundary.leftSide) {
                 transform.Translate(Vector3.left * Time.deltaTime * leftRightSpeed * 1.0f);
-            // }
+            }
         }
         if (Input.GetKey(KeyCode.RightArrow)) {
-            // if (this.gameObject.transform.position.x < LevelBoundary.rightSide) {
+            if (this.gameObject.transform.position.x < LevelBoundary.rightSide) {
                 transform.Translate(Vector3.left * Time.deltaTime * leftRightSpeed * -1.0f);
-            // }
+            }
         }
 
     }
