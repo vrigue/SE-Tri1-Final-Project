@@ -44,12 +44,12 @@ public class PlayerController : MonoBehaviour
         // // Moves the car forward based on vertical input
         transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow)) {
-             transform.position = new Vector3(-5,0,6);
-        }
-        if (Input.GetKeyDown(KeyCode.RightArrow)) {
-            transform.position = new Vector3(5,0,6);
-        }
+        // if (Input.GetKeyDown(KeyCode.LeftArrow)) {
+        //      transform.position = new Vector3(-5,0,6);
+        // }
+        // if (Input.GetKeyDown(KeyCode.RightArrow)) {
+        //     transform.position = new Vector3(5,0,6);
+        // }
         if (Input.GetKey(KeyCode.LeftArrow)) {
             if (this.gameObject.transform.position.x > LevelBoundary.leftSide) {
                 transform.Translate(Vector3.left * Time.deltaTime * leftRightSpeed * 1.0f);
