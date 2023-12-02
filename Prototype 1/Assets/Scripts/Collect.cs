@@ -9,17 +9,6 @@ public class Collect : MonoBehaviour
 {
     public UiManager uimanager;
     public PlayerController playerController; 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Respawn") // hitting collectibles
@@ -46,6 +35,5 @@ public class Collect : MonoBehaviour
             playerController.leftRightSpeed = 0;
             playerController.moveSpeed = 0;
         }
-
     }
 }
