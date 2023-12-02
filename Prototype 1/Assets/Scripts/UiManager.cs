@@ -12,15 +12,18 @@ public class UiManager : MonoBehaviour
     [SerializeField] private TMP_Text restartText;
     [SerializeField] private GameObject winPanel;
     [SerializeField] private GameObject startPanel;
+
     public bool isGameOver = false;
     public bool isGameOverWin = false;
     private AudioSource carCrash;
 
+    delegate void SoundDelegate();
+    SoundDelegate soundDelegate;
 
     // Start is called before the first frame update
     void Start()
     {
-        //Disables panel if active
+        // Disables panel if active
         gameOverPanel.SetActive(false);
         winPanel.SetActive(false);
         restartText.gameObject.SetActive(false);
@@ -34,16 +37,13 @@ public class UiManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.G) && !isGameOver)
         {
             isGameOver = true;
-
             StartCoroutine(GameOverSequence());
         }
 
         
-
-        //If game is over
+        // if game is over
         if (isGameOver || isGameOverWin)
         {
-
             // if r is hit restart current scene
             if (Input.GetKeyDown(KeyCode.R))
             {
@@ -60,25 +60,27 @@ public class UiManager : MonoBehaviour
         }
     }
 
-    // controls game over canvas so there's dely between u lost lol and the restart/quit
-    public IEnumerator GameOverSequence()
+    void playCarCrashSound() 
     {
         carCrash = GetComponent<AudioSource>();
         carCrash.Play();
+    }
+
+    // controls game over canvas so there's a delay between "u lost lol" and the restart/quit
+    public IEnumerator GameOverSequence()
+    {
+        soundDelegate = playCarCrashSound;
+        soundDelegate();
         
         gameOverPanel.SetActive(true);
-
         yield return new WaitForSeconds(5.0f);
-
         restartText.gameObject.SetActive(true);
     }
 
     public IEnumerator GameOverSequenceWin()
     {
         winPanel.SetActive(true);
-
         yield return new WaitForSeconds(5.0f);
-
         restartText.gameObject.SetActive(true);
     }
 }
