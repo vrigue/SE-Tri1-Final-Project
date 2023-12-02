@@ -351,6 +351,7 @@
 "Assets/Challenge 1/Scripts/FollowPlayerX.cs"
 "Assets/Challenge 1/Scripts/PlayerControllerX.cs"
 "Assets/Scripts/Collect.cs"
+"Assets/Scripts/Collectible.cs"
 "Assets/Scripts/FollowPlayer.cs"
 "Assets/Scripts/LevelBoundary.cs"
 "Assets/Scripts/PlayerController.cs"

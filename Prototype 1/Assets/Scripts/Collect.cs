@@ -10,10 +10,19 @@ public class Collect : MonoBehaviour
     public UiManager uimanager;
     public PlayerController playerController; 
 
+    private int points;
+    private AudioSource soundEffect;
+
     void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Respawn") // hitting collectibles
         {
-         Destroy(other.gameObject);   
+            soundEffect = other.GetComponent<AudioSource>();
+            soundEffect.Play();
+
+            points = other.gameObject.GetComponent<AnimationScript>().collectible.getPointValue();
+            uimanager.UpdateScore(points);
+
+            Destroy(other.gameObject);   
         }
         else if(other.gameObject.tag == "Finish") // hitting wall at end
         {
