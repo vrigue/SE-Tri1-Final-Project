@@ -9,8 +9,8 @@ public class LevelBoundary : MonoBehaviour
     // {
         
     // }
-    public static float leftSide;
-    public static float rightSide;
+    public static float leftSide = -6.0f;
+    public static float rightSide = 6.0f;
     public float internalLeft;
     public float internalRight;
 
