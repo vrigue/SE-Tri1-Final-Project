@@ -16,13 +16,13 @@ public class Collect : MonoBehaviour
     void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Respawn") // hitting collectibles
         {
-            soundEffect = other.GetComponent<AudioSource>();
-            soundEffect.Play();
-
             points = other.gameObject.GetComponent<AnimationScript>().collectible.getPointValue();
             uimanager.UpdateScore(points);
 
-            Destroy(other.gameObject);   
+            soundEffect = other.gameObject.GetComponent<AudioSource>();
+            soundEffect.Play();
+
+            StartCoroutine(destroyCollectible(other.gameObject));  
         }
         else if(other.gameObject.tag == "Finish") // hitting wall at end
         {
@@ -44,5 +44,11 @@ public class Collect : MonoBehaviour
             playerController.leftRightSpeed = 0;
             playerController.moveSpeed = 0;
         }
+    }
+
+    public IEnumerator destroyCollectible(GameObject collectible)
+    {
+        yield return new WaitForSeconds(1.7f);
+        Destroy(collectible); 
     }
 }
