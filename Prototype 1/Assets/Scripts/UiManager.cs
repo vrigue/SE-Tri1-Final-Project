@@ -12,10 +12,13 @@ public class UiManager : MonoBehaviour
     [SerializeField] private TMP_Text restartText;
     [SerializeField] private GameObject winPanel;
     [SerializeField] private GameObject startPanel;
+    public TextMeshProUGUI scoreText;
 
     public bool isGameOver = false;
     public bool isGameOverWin = false;
+
     private AudioSource carCrash;
+    private int score;
 
     delegate void SoundDelegate();
     SoundDelegate soundDelegate;
@@ -28,6 +31,8 @@ public class UiManager : MonoBehaviour
         winPanel.SetActive(false);
         restartText.gameObject.SetActive(false);
 
+        score = 0;
+        UpdateScore(0);
     }
 
     // Update is called once per frame
@@ -64,6 +69,12 @@ public class UiManager : MonoBehaviour
     {
         carCrash = GetComponent<AudioSource>();
         carCrash.Play();
+    }
+
+    public void UpdateScore (int scoreToAdd)
+    {
+        score += scoreToAdd;
+        scoreText.text = "Score: " + score;
     }
 
     // controls game over canvas so there's a delay between "u lost lol" and the restart/quit

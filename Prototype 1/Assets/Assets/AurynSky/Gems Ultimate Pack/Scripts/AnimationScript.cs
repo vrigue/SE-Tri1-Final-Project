@@ -3,6 +3,8 @@ using System.Collections;
 
 public class AnimationScript : MonoBehaviour {
 
+    public Collectible collectible;
+
     public bool isAnimated = false;
 
     public bool isRotating = false;
