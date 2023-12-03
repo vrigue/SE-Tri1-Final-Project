@@ -16,6 +16,8 @@ public class Collect : MonoBehaviour
     void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Respawn") // hitting collectibles
         {
+            other.gameObject.transform.position -= new Vector3(0, 10, 0);
+
             points = other.gameObject.GetComponent<AnimationScript>().collectible.getPointValue();
             uimanager.UpdateScore(points);
 
@@ -48,7 +50,7 @@ public class Collect : MonoBehaviour
 
     public IEnumerator destroyCollectible(GameObject collectible)
     {
-        yield return new WaitForSeconds(1.7f);
+        yield return new WaitForSeconds(5.0f);
         Destroy(collectible); 
     }
 }
