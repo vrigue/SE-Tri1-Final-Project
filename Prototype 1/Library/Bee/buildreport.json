@@ -1,0 +1,22 @@
+{
+"instructions_readme": "1) Open Chrome, 2) go to chrome://tracing, 3) click Load, 4) navigate to this file.",
+
+"traceEvents":[
+{ "pid": "Unity", "ph":"M", "name": "process_name", "args": {"name": "Unity"} },
+{ "pid": "Unity", "ph":"M", "name": "process_sort_index", "args": {"sort_index": -100} },
+{ "pid": "Unity", "tid": 1, "ph":"M", "name": "thread_name", "args": {"name": ""} },
+{ "pid": "Unity", "tid": 1,"ts": 1551898621738.9,"dur": 1336354.5, "ph":"X", "name": "Build player"},
+{ "pid": "Unity", "tid": 1,"ts": 1551898649081.9,"dur": 87734.1, "ph":"X", "name": "Preprocess Player"},
+{ "pid": "Unity", "tid": 1,"ts": 1551898970448.9,"dur": 715.1, "ph":"X", "name": "Prepare For Build"},
+{ "pid": "Unity", "tid": 1,"ts": 1551898971172.9,"dur": 927480.4, "ph":"X", "name": "ProducePlayerScriptAssemblies"},
+{ "pid": "Unity", "tid": 1,"ts": 1551899862585.4,"dur": 35890.7, "ph":"X", "name": "Prebuild Cleanup and Recompile"},
+{}
+
+],
+"meta_datetime": "12/03/2023 16:07:49",
+"meta_command_line": "\"C:\\Program Files\\Unity\\Hub\\Editor\\2021.3.5f1\\Editor\\Unity.exe\" -projectpath \"C:\\Users\\fairy\\Documents\\GitHub\\SE-Tri1-Final-Project\\Prototype 1\" -useHub -hubIPC -cloudEnvironment production -licensingIpc LicenseClient-V3me0U13XQT7SK-ZNWHwk -hubSessionId 798ceba0-920e-11ee-8b46-fd31a609aa0a -accessToken yiecFZWbxuZ6cr0klvVUVdJgem-ZNXChMM0f_7MLYcc002f",
+"meta_command_line_args": "C:\\Program Files\\Unity\\Hub\\Editor\\2021.3.5f1\\Editor\\Unity.exe -projectpath C:\\Users\\fairy\\Documents\\GitHub\\SE-Tri1-Final-Project\\Prototype 1 -useHub -hubIPC -cloudEnvironment production -licensingIpc LicenseClient-V3me0U13XQT7SK-ZNWHwk -hubSessionId 798ceba0-920e-11ee-8b46-fd31a609aa0a -accessToken yiecFZWbxuZ6cr0klvVUVdJgem-ZNXChMM0f_7MLYcc002f",
+"meta_user_name": "fairy",
+"meta_os_version": "Microsoft Windows NT 10.0.22621.0",
+"meta_cpu_count": "8"
+}
