@@ -71,10 +71,11 @@ public class UiManager : MonoBehaviour
         carCrash.Play();
     }
 
-    public void UpdateScore (int scoreToAdd)
+    public int UpdateScore (int scoreToAdd)
     {
         score += scoreToAdd;
         scoreText.text = "Score: " + score;
+        return scoreToAdd;
     }
 
     // controls game over canvas so there's a delay between "u lost lol" and the restart/quit

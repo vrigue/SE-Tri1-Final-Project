@@ -9,7 +9,7 @@ public class testing_score
 {
     // A Test behaves as an ordinary method
     [Test]
-    public void testing_score()
+    public void adds_5_to_score()
     {
         // Use the Assert class to test conditions
         int testScore = UiManager.UpdateScore(5);
